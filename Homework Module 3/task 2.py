@@ -1,0 +1,6 @@
+first_quarter = int(input('Введите доход первого квартала: '))
+second_quarter = int(input('Введите доход второго квартала: '))
+third_quarter = int(input('Введите доход третьего квартала: '))
+fourth_quarter = int(input('Введите доход четвертого квартала: '))
+dynamics = (first_quarter + second_quarter) / (third_quarter + fourth_quarter)
+print('Динамика роста или падения дохода:', dynamics)
