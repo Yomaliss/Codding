@@ -6,4 +6,4 @@ while number // 10 != 0:
     number //= 10
     amount += 1
 
-print(f'В заданном числе 5 цифр')
+print('В заданном числе 5 цифр')
