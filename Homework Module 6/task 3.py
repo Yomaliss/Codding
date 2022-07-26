@@ -1,16 +1,9 @@
-number = int(input('Введите число: '))
 number_0 = 0
-amount = 0
+amount = 1
 
+number = int(input('Введите число: '))
+while number // 10 != 0:
+    number //= 10
+    amount += 1
 
-while number != 0:
-    number_current = number
-    number %= 10
-    if number == 0:
-        number = 1
-    number_x = number
-    number = number_current // 10
-    amount += number_x
-
-
-print(amount)
+print(f'В заданном числе 5 цифр')

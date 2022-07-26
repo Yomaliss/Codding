@@ -10,7 +10,7 @@ while work_current < work:
     print(f'{work_current} час')
     tasks_total += int(input('Сколько задач решит Максим? '))
     wife = int(input('Звонит жена. Взять трубку? (1 — да, 0 — нет): '))
-    if wife == 1:
+    if wife:
         wife_true = True
 
 
