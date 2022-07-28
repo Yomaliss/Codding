@@ -6,21 +6,32 @@ comb = ''
 total = boys + girls
 check = True
 
-
 if boys > girls * 2 or girls > boys * 2:
     print('Ответ: Нет решения')
 elif boys > girls:
     for x in range(1, total + 1, 2):
-        if girls > 0 and boys > 0:
-            comb += boy + girl + boy
-            girls -= 1
-            boys -= 2
+        if girls == boys / 2:
+            if girls > 0 and boys > 0:
+                comb += boy + girl + boy
+                girls -= 1
+                boys -= 2
+        else:
+            if girls > 0 and boys > 0:
+                comb += boy + girl + girl + boy
+                girls -= 2
+                boys -= 2
 elif girls > boys:
     for x in range(1, total + 1, 2):
-        if girls > 0 and boys > 0:
-            comb += girl + boy + girl
-            girls -= 2
-            boys -= 1
+        if boys == girls / 2:
+            if girls > 0 and boys > 0:
+                comb += girl + boy + girl
+                girls -= 2
+                boys -= 1
+        else:
+            if girls > 0 and boys > 0:
+                comb += girl + boy + boy + girl
+                girls -= 2
+                boys -= 2
 elif girls == boys:
     for x in range(1, total + 1, 2):
         comb += girl + boy
