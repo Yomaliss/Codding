@@ -1,10 +1,9 @@
 months = 12
-month = 0
 month_count = 0
 salary_total = 0
 
 
-for month in range(1, 12 + 1):
+for _month in range(1, 12 + 1):
     month_count += 1
     salary_total += int(input(f'Введите зарплату за {month_count} месяц: \n \
 '))
