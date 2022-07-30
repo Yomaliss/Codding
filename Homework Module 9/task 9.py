@@ -8,7 +8,7 @@ check = True
 
 
 for _counter in busy:
-    count += 1
+    count = len(busy)
 if count == 10:
     for busy_answer in busy:
         milk += 2
