@@ -5,16 +5,16 @@ count = depth
 
 
 for number in range(depth):
-    print(depth, end='')
+    # print(depth, end='')
     count = depth
-    for num in range(number):
-        count -= 1
+    for num in range(number + 1):
         print(count, end='')
+        count -= 1
     print('.' * amount, end='')
     count = depth - number
-    while count < depth:
+    while count < depth + 1:
         print(count, end='')
         count += 1
-    print(depth, end='')
+    # print(depth, end='')
     amount -= 2
     print()
