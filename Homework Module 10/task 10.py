@@ -1,20 +1,20 @@
-heigth = int(input('Введите глубину ямы: '))
-width = heigth * 2
+depth = int(input('Введите глубину ямы: '))
+width = depth * 2
 amount = width - 2
-count = heigth
+count = depth
 
 
-for number in range(heigth):
-    print(heigth, end='')
-    count = heigth
+for number in range(depth):
+    print(depth, end='')
+    count = depth
     for num in range(number):
         count -= 1
         print(count, end='')
     print('.' * amount, end='')
-    count = heigth - number
-    while count < heigth:
+    count = depth - number
+    while count < depth:
         print(count, end='')
         count += 1
-    print(heigth, end='')
+    print(depth, end='')
     amount -= 2
     print()
