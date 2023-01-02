@@ -40,7 +40,7 @@ def menu(variable):    # main function
 
 def general_info_user(n_parameter, a_parameter, ph_parameter, e_parameter, index_parameter, address_parameter,
                       i_parameter):   # main function
-    print(f'SEPARATOR'
+    print(f'{SEPARATOR}'
           f'Имя: {n_parameter}')
     if 11 <= a_parameter % 100 <= 19:
         years_parameter = 'лет'
@@ -64,7 +64,7 @@ def general_info_user(n_parameter, a_parameter, ph_parameter, e_parameter, index
 
 def entrepreneur_info_user(psrnsp_parameter, itn_parameter, bank_account_parameter, name_bank_parameter, bic_parameter,
                            corr_account_parameter):   # main function
-    print('Информация о предпринимателе'
+    print('Информация о предпринимателе\n'
           f'ОГРНИП: {psrnsp_parameter}\n'
           f'ИНН: {itn_parameter}\n'
           'Банковские реквизиты\n'
@@ -91,7 +91,7 @@ def get_user_info(option_value):   # main function
         _bank_account = checking_digits('bank_account')
         _name_bank = input('Введите название банка: ')
         _bic = input('Введите БИК: ')
-        _corr_account = input('Введите корреспондентский счет: ')
+        _corr_account = input('Введите корреспондентский счёт: ')
         return _psrnsp, _itn, _bank_account, _name_bank, _bic, _corr_account
 
 
@@ -109,14 +109,14 @@ def checking_digits(variable):   # auxiliary function
         name_variable = 'ОГРНИП'
     elif variable == 'bank_account':
         digits = 20
-        name_variable = 'Расчётный счёт'
+        name_variable = 'расчётный счёт'
     while True:
         variable = input(f'Введите {name_variable}: ')
 
         if len(variable) == digits and variable.isdigit():
             break
         else:
-            print(f' {name_variable} должен содержать {digits} цифр')
+            print(f'{name_variable} должен содержать {digits} цифр')
 
     return variable
 
@@ -126,7 +126,7 @@ def only_digits(variable):   # auxiliary function
     return variable
 
 
-def validate_user_age(_age):
+def validate_user_age(_age):   # auxiliary function
     while _age <= 0:
         print('Возраст должен быть положительным')
         _age = int(input('Введите возраст: '))
@@ -154,6 +154,7 @@ while True:
             option2 = int(input('Введите номер пункта меню: '))
             if option2 == 0:
                 break
+
             if option2 == 1:
                 # input general info
                 name, age, phone_number, email, index, address, add_info = get_user_info(option2)
@@ -164,6 +165,7 @@ while True:
 
             else:
                 print('Введён некорректный пункт меню')
+
     elif option == 2:
         # submenu 2: print info
         while True:
@@ -172,12 +174,16 @@ while True:
             option2 = int(input('Введите номер пункта меню: '))
             if option2 == 0:
                 break
+
             if option2 == 1:
+                # print general info
                 general_info_user(name, age, phone_number, email, index, address, add_info)
 
             elif option2 == 2:
+                # print all information
                 general_info_user(name, age, phone_number, email, index, address, add_info)
                 entrepreneur_info_user(psrnsp, itn, bank_account, name_bank, bic, corr_account)
+
             else:
                 print('Введён некорректный пункт меню')
     else:
